@@ -28,39 +28,5 @@ class InfoCog(commands.Cog):
             await ctx.send('This command has a **10** second cooldown.  Please retry in: **{:.2f}s**'.format(error.retry_after))
 
 
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def setup(client):
     client.add_cog(InfoCog(client))
