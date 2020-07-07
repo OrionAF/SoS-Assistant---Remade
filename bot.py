@@ -29,7 +29,7 @@ def owner(ctx):
 
 client = commands.Bot(command_prefix = get_prefix, case_insensitive=True)
 client.remove_command('help')
-version = '0.0.9'
+version = '0.0.1'
 
 @client.event
 async def on_ready():
