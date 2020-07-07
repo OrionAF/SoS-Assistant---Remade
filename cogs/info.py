@@ -28,13 +28,6 @@ class InfoCog(commands.Cog):
             await ctx.send('This command has a **10** second cooldown.  Please retry in: **{:.2f}s**'.format(error.retry_after))
 
 
-##################################################################################################
-#                                                                                                #
-#             Everthing here below is information on the Infected.                               #
-#                                                                                                #
-##################################################################################################
-
-
 
 
     
