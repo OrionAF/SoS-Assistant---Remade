@@ -42,6 +42,8 @@ class InfectedCog(commands.Cog):
         
 
     @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
     async def ilvl1(self, ctx):
         infectedData = await InfectedCog.getInfectedData(self, ctx, level=1)
 
@@ -49,6 +51,8 @@ class InfectedCog(commands.Cog):
 
 
     @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
     async def ilvl2(self, ctx):
         infectedData = await InfectedCog.getInfectedData(self, ctx, level=2)
 
