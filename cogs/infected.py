@@ -13,13 +13,15 @@ class InfectedCog(commands.Cog):
         self.client = client
 
     @commands.Cog.listener()
-    async def getInfectedData(self, ctx, level):
+    async def getInfectedData(self, ctx, lvl):
         channelInfoLogs = self.client.get_channel(728238632175009863)
         currentDT = datetime.datetime.now()
         db = sqlite3.connect('main.sqlite')
         cursor = db.cursor()
-        cursor.execute("SELECT title, description, replace(field, '\\n', '\n') as field, thumbnail, image, replace(footer, '\\n', '\n') as footer FROM realinfected WHERE level = level")
+        cursor.execute("SELECT title, description, replace(field, '\\n', '\n') as field, thumbnail, image, replace(footer, '\\n', '\n') as footer FROM realinfected WHERE level = ?", (lvl,))
         result = cursor.fetchone()
+        print(lvl)
+        print('/-/-/-/-/-/-/-/-/-/-/-/-/-/')
         embedInf = discord.Embed(title=(result[0]), colour=discord.Colour(16333359), description=(result[1]))
         embedInf.add_field(name='​', value=f'{(result[2])}', inline=False)
         embedInf.set_thumbnail(url=(result[3]))
@@ -38,6 +40,7 @@ class InfectedCog(commands.Cog):
         await channelInfoLogs.send(embed=embedInfLog)
         await channelInfoLogs.send(f'◆↓◆↓◆↓◆↓◆↓◆↓◆')
 
+
         return embedInf
         
 
@@ -45,7 +48,7 @@ class InfectedCog(commands.Cog):
     #@commands.has_role(703013734045712424)
     #@commands.cooldown(1, 10, commands.BucketType.user)
     async def ilvl1(self, ctx):
-        infectedData = await InfectedCog.getInfectedData(self, ctx, level=1)
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 1)
 
         await ctx.send(embed=infectedData)
 
@@ -54,41 +57,233 @@ class InfectedCog(commands.Cog):
     #@commands.has_role(703013734045712424)
     #@commands.cooldown(1, 10, commands.BucketType.user)
     async def ilvl2(self, ctx):
-        infectedData = await InfectedCog.getInfectedData(self, ctx, level=2)
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 2)
 
         await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl3(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 3)
 
+        await ctx.send(embed=infectedData)
+
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl4(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 4)
+
+        await ctx.send(embed=infectedData)
+
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl5(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 5)
+
+        await ctx.send(embed=infectedData)
+
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl6(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 6)
+
+        await ctx.send(embed=infectedData)
+
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl7(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 7)
+
+        await ctx.send(embed=infectedData)
+
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl8(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 8)
+
+        await ctx.send(embed=infectedData)
+
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl9(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 9)
+
+        await ctx.send(embed=infectedData)
+
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl10(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 10)
+
+        await ctx.send(embed=infectedData)
+
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl11(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 11)
+
+        await ctx.send(embed=infectedData)
     
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl12(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 12)
 
+        await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl13(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 13)
 
+        await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl14(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 14)
 
+        await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl15(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 15)
 
+        await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl16(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 16)
 
+        await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl17(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 17)
 
+        await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl18(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 18)
 
+        await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl19(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 19)
 
+        await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl20(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 20)
 
+        await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl21(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 21)
 
+        await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl22(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 22)
 
+        await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl23(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 23)
 
+        await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl24(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 24)
 
+        await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl25(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 25)
 
+        await ctx.send(embed=infectedData)
 
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl26(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 26)
 
+        await ctx.send(embed=infectedData)
+
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl27(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 27)
+
+        await ctx.send(embed=infectedData)
+
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl28(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 28)
+
+        await ctx.send(embed=infectedData)
+
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl29(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 29)
+
+        await ctx.send(embed=infectedData)
+
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def ilvl30(self, ctx):
+        infectedData = await InfectedCog.getInfectedData(self, ctx, 30)
+
+        await ctx.send(embed=infectedData)
 
 
 def setup(client):
