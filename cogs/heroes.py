@@ -12,18 +12,60 @@ class HeroesCog(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @commands.command()
-    async def travis(self, ctx):
-        embedHero = discord.Embed(title=f'Travis', colour=discord.Colour(16333359), description="*One of Travis Cody's earliest memories is holding his grandfather's hunting rifle on the porch of the old house.  It went off by accident, blowing the lightbulp to pieces, and the young Travis was hooked.  He would accompany his grandfather and father on hunting expeditions from a young age and his hunting skills eventually helped him excel as a combat tracker in the military.  He enjoys a friendly rivalry with Jane, often having competitions to see who can hit a Lurcher between the eyes from the furthest distance.  He refers to all Infected as “varmint”, which confuses Nikola to no end.*")
-        embedHero.set_author(name=f'Travis', icon_url='https://i.imgur.com/vwpD7pP.png')
-        embedHero.add_field(name='​', value=f'​', inline=False)
-        embedHero.add_field(name='', value=f'​', inline=False)
-        embedHero.set_thumbnail(url='https://i.imgur.com/oVYh6KG.png')
-        embedHero.set_image(url='https://i.imgur.com/xl37giI.png')
-        embedHero.set_footer(text='Missing or wrong information? \nMissing or wrong rewards? \nSuggestions or requests regarding the bot? \nMessage OrionAF#6982')
+    @commands.Cog.listener()
+    async def getHeroData(self, ctx, lvl):
+        db = sqlite3.connect('main.sqlite')
+        cursor = db.cursor()
+        cursor.execute("SELECT color, description, title, icon_url, main_skills, replace(max_lvl_military, '\\n', '\n') as max_lvl_military, replace(starting_lvl_military, '\\n', '\n') as starting_lvl_military, replace(max_lvl_explorer, '\\n', '\n') as max_lvl_explorer, replace(starting_lvl_explorer, '\\n', '\n') as starting_lvl_explorer, thumbnail, image, replace(footer, '\\n', '\n') as footer FROM heroes WHERE name = ?", (lvl,))
+        result = cursor.fetchone()
+        print(lvl)
+        print('/-/-/-/-/-/-/-/-/-/-/-/-/-/')
+        embedHeroStart = discord.Embed(colour=discord.Colour((result[0])), description=(result[1]))
+        embedHeroStart.set_author(name=(result[2]), icon_url=(result[3]))
+        embedHero = discord.Embed(colour=discord.Colour((result[0])), description=(result[4]))
+        embedHero.add_field(name='​\n**Max Level Military**', value=(result[5]), inline=True)
+        embedHero.add_field(name='​\n**Starting Level Military**', value=(result[6]), inline=True)
+        embedHero.add_field(name='​', value='​', inline=True)
+        embedHero.add_field(name='​\n**Max Level Explorer**', value=(result[7]), inline=True)
+        embedHero.add_field(name='​\n**Starting Level Explorer**', value=(result[8]), inline=True)
+        embedHero.add_field(name='​', value='​', inline=True)
+        embedHeroStart.set_thumbnail(url=(result[9]))
+        embedHero.set_image(url=(result[10]))
+        embedHero.set_footer(text=(result[11]))
         embedHero.timestamp = datetime.datetime.utcnow()
 
-        await ctx.send(embed=embedHero)
+        await ctx.send(embed=embedHeroStart)
+
+        return embedHero
+
+
+
+    #Travis
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def travis(self, ctx):
+        HeroData = await HeroesCog.getHeroData(self, ctx, 1)
+
+        await ctx.send(embed=HeroData)
+
+    #Maddie & Frank
+    @commands.command(aliases=('frank', 'maddie&frank', 'maddieandfrank'))
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def maddie(self, ctx):
+        HeroData = await HeroesCog.getHeroData(self, ctx, 2)
+
+        await ctx.send(embed=HeroData)
+
+    #Chef
+    @commands.command()
+    #@commands.has_role(703013734045712424)
+    #@commands.cooldown(1, 10, commands.BucketType.user)
+    async def chef(self, ctx):
+        HeroData = await HeroesCog.getHeroData(self, ctx, 3)
+
+        await ctx.send(embed=HeroData)
 
 
 
