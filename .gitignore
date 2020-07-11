@@ -1,3 +1,8 @@
 /.env
 /discord.log
 /main.sqlite
+/fiends.cpython-37.pyc
+/heroes.cpython-37.pyc
+/infected.cpython-37.pyc
+/info.cpython-37.pyc
+/pz.cpython-37.pyc
