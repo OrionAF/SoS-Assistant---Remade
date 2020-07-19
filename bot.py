@@ -33,7 +33,7 @@ version = '0.0.1'
 
 @client.event
 async def on_ready():
-    activity0 = discord.Activity(name='!help', type=discord.ActivityType.watching)
+    activity0 = discord.Activity(name='!info', type=discord.ActivityType.watching)
     currentDT = DT.datetime.now()
     print('/-/-/-/-/-/-/-/-/-/-/-/-/-/')
     print(currentDT)
