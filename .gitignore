@@ -2,3 +2,6 @@
 /discord.log
 /main.sqlite
 *.pyc
+*.cpython-37.pyc
+cogs/__pycache__/info.cpython-37.pyc
+cogs/__pycache__/infected.cpython-37.pyc
