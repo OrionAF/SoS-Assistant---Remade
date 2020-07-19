@@ -44,7 +44,7 @@ class FiendCog(commands.Cog):
         return embedFiend
 
 
-    @commands.command()
+    @commands.command(aliases=('iflvl1', 'fiendlvl1', 'flv1', 'iflv1' 'fiendlv1'))
     #@commands.has_role(703013734045712424)
     #@commands.cooldown(1, 10, commands.BucketType.user)
     async def flvl1(self, ctx):
@@ -53,7 +53,7 @@ class FiendCog(commands.Cog):
         await ctx.send(embed=infectedData)
 
 
-    @commands.command()
+    @commands.command(aliases=('iflvl2', 'fiendlvl2', 'flv2', 'iflv2' 'fiendlv2'))
     #@commands.has_role(703013734045712424)
     #@commands.cooldown(1, 10, commands.BucketType.user)
     async def flvl2(self, ctx):
@@ -61,7 +61,7 @@ class FiendCog(commands.Cog):
 
         await ctx.send(embed=infectedData)
 
-    @commands.command()
+    @commands.command(aliases=('iflvl3', 'fiendlvl3', 'flv3', 'iflv3' 'fiendlv3'))
     #@commands.has_role(703013734045712424)
     #@commands.cooldown(1, 10, commands.BucketType.user)
     async def flvl3(self, ctx):
@@ -69,7 +69,7 @@ class FiendCog(commands.Cog):
 
         await ctx.send(embed=infectedData)
 
-    @commands.command()
+    @commands.command(aliases=('iflvl4', 'fiendlvl4', 'flv4', 'iflv4' 'fiendlv4'))
     #@commands.has_role(703013734045712424)
     #@commands.cooldown(1, 10, commands.BucketType.user)
     async def flvl4(self, ctx):
@@ -77,7 +77,7 @@ class FiendCog(commands.Cog):
 
         await ctx.send(embed=infectedData)
 
-    @commands.command()
+    @commands.command(aliases=('iflvl5', 'fiendlvl5', 'flv5', 'iflv5' 'fiendlv5'))
     #@commands.has_role(703013734045712424)
     #@commands.cooldown(1, 10, commands.BucketType.user)
     async def flvl5(self, ctx):
@@ -85,7 +85,7 @@ class FiendCog(commands.Cog):
 
         await ctx.send(embed=infectedData)
 
-    @commands.command()
+    @commands.command(aliases=('norm', 'hunter', 'normalhunter', 'normhunter'))
     #@commands.has_role(703013734045712424)
     #@commands.cooldown(1, 10, commands.BucketType.user)
     async def normal(self, ctx):
@@ -93,7 +93,7 @@ class FiendCog(commands.Cog):
 
         await ctx.send(embed=infectedData)
 
-    @commands.command()
+    @commands.command(aliases=('elitehunter', 'elt', 'elthunter'))
     #@commands.has_role(703013734045712424)
     #@commands.cooldown(1, 10, commands.BucketType.user)
     async def elite(self, ctx):
