@@ -29,12 +29,9 @@ class FiendCog(commands.Cog):
         embedFiend.set_footer(text=(result[5]))
         embedFiend.timestamp = datetime.datetime.utcnow()
 
-        embedFiendLog = discord.Embed(title=str(result[0]), colour=discord.Colour(16333359), description=str(result[1]))
-        embedFiendLog.add_field(name='​', value=f'{(result[2])}', inline=False)
-        embedFiendLog.add_field(name='​', value=f'Execution information:\nTime & Date: **{currentDT}**\nName: **{ctx.author}**\nServer Name: **{ctx.guild.name}**\nGuild ID: **{ctx.guild.id}**\nServer Owner: **{ctx.guild.owner}**\nMember Amount: **{ctx.guild.member_count}**\nServer Icon: [Icon]({ctx.guild.icon_url_as(format=None, size=64)})')
+        embedFiendLog = discord.Embed(title=str(result[0]), colour=discord.Colour(16333359), description=f'```Execution information:\nTime & Date: {currentDT}\nName: {ctx.author}\nServer Name: {ctx.guild.name}\nGuild ID: {ctx.guild.id}\nServer Owner: {ctx.guild.owner}\nMember Amount: {ctx.guild.member_count}\nServer Icon:``` [Icon]({ctx.guild.icon_url_as(format=None, size=64)})')
         embedFiendLog.set_thumbnail(url=str(result[3]))
-        embedFiendLog.set_image(url=str(result[4]))
-        embedFiendLog.set_footer(text=str(result[5]), icon_url=f'{ctx.guild.icon_url_as(format=None)}')
+        embedFiendLog.set_footer(text=f'Info Logs', icon_url=f'{ctx.guild.icon_url_as(format=None)}')
         embedFiendLog.timestamp = datetime.datetime.utcnow()
 
         await channelInfoLogs.send(embed=embedFiendLog)
@@ -44,7 +41,7 @@ class FiendCog(commands.Cog):
         return embedFiend
 
 
-    @commands.command(aliases=('iflvl1', 'fiendlvl1', 'flv1', 'iflv1' 'fiendlv1'))
+    @commands.command(aliases=('iflvl1', 'if1', 'f1', 'fiendlvl1', 'flv1', 'iflv1' 'fiendlv1'))
     #@commands.has_role(703013734045712424)
     #@commands.cooldown(1, 10, commands.BucketType.user)
     async def flvl1(self, ctx):
@@ -53,7 +50,7 @@ class FiendCog(commands.Cog):
         await ctx.send(embed=infectedData)
 
 
-    @commands.command(aliases=('iflvl2', 'fiendlvl2', 'flv2', 'iflv2' 'fiendlv2'))
+    @commands.command(aliases=('iflvl2', 'if2', 'f2', 'fiendlvl2', 'flv2', 'iflv2' 'fiendlv2'))
     #@commands.has_role(703013734045712424)
     #@commands.cooldown(1, 10, commands.BucketType.user)
     async def flvl2(self, ctx):
@@ -61,7 +58,7 @@ class FiendCog(commands.Cog):
 
         await ctx.send(embed=infectedData)
 
-    @commands.command(aliases=('iflvl3', 'fiendlvl3', 'flv3', 'iflv3' 'fiendlv3'))
+    @commands.command(aliases=('iflvl3', 'if3', 'f3', 'fiendlvl3', 'flv3', 'iflv3' 'fiendlv3'))
     #@commands.has_role(703013734045712424)
     #@commands.cooldown(1, 10, commands.BucketType.user)
     async def flvl3(self, ctx):
@@ -69,7 +66,7 @@ class FiendCog(commands.Cog):
 
         await ctx.send(embed=infectedData)
 
-    @commands.command(aliases=('iflvl4', 'fiendlvl4', 'flv4', 'iflv4' 'fiendlv4'))
+    @commands.command(aliases=('iflvl4', 'if4', 'f4', 'fiendlvl4', 'flv4', 'iflv4' 'fiendlv4'))
     #@commands.has_role(703013734045712424)
     #@commands.cooldown(1, 10, commands.BucketType.user)
     async def flvl4(self, ctx):
@@ -77,7 +74,7 @@ class FiendCog(commands.Cog):
 
         await ctx.send(embed=infectedData)
 
-    @commands.command(aliases=('iflvl5', 'fiendlvl5', 'flv5', 'iflv5' 'fiendlv5'))
+    @commands.command(aliases=('iflvl5', 'if5', 'f5', 'fiendlvl5', 'flv5', 'iflv5' 'fiendlv5'))
     #@commands.has_role(703013734045712424)
     #@commands.cooldown(1, 10, commands.BucketType.user)
     async def flvl5(self, ctx):
