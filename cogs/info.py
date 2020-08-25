@@ -182,7 +182,7 @@ class InfoCog(commands.Cog, name='InfoCog'):
         embedMisc.timestamp = datetime.datetime.utcnow()
 
         embedMiscLog = discord.Embed(colour=discord.Colour(29952), description=f'```Execution information:\nTime & Date: {currentDT}\nName: {ctx.author}\nServer Name: {ctx.guild.name}\nGuild ID: {ctx.guild.id}\nServer Owner: {ctx.guild.owner}\nMember Amount: {ctx.guild.member_count}\nServer Icon:``` [Icon]({ctx.guild.icon_url_as(format=None, size=64)})')
-        embedMiscLog.set_author(name=f'Miscellaneous Help')
+        embedMiscLog.set_author(name=f'Miscellaneous Help', icon_url=f'{ctx.author.avatar_url}')
         embedMiscLog.set_footer(text=f'Info Logs', icon_url=f'{ctx.guild.icon_url_as(format=None)}')
         embedMiscLog.timestamp = datetime.datetime.utcnow()
 
